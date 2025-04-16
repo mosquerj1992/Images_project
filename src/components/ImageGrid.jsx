@@ -5,15 +5,19 @@ import { useFetch } from "../hooks/useFetch";
 
 export const ImageGrid = () => {
 
-    const { images, initalLoad, isLoading, query, setQuery } = useFetch();
+    const { images, initalLoad, isLoading, query, setQuery, getRequest } = useFetch();
 
 
-    const onHandleClick = () => { };
+    const onHandleClick = () => { 
+
+        if(query.trim() !==''){
+            getRequest(query)
+        }
+    };
 
 
     const onHandleChange = (event) => {
-        console.log(event.target.value);
-        setQuery(event.target.value);
+      setQuery(event.target.value);
     };
 
     return (
