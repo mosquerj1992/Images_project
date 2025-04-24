@@ -1,42 +1,37 @@
-import React,{useReducer} from "react";
-import reducer fr4
-om "../helpers/reducer";
+import React, { useReducer } from "react";
+import { reducer } from "../helpers/CounterReduccer";
+export const CounterReducer = () => {
 
-export const CounterReduccer = () => {
-    
-    const regex = /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/;
-    switch (useActionState.type) {
-        case 'update_field':
-            return {
-                ...State,
-                values: {
-                    ...state.values,
-                    [useActionState.campo]: useActionState.valor,
-                },
-                enviado: false,
-            };
-        case 'validate':
-            const errors = {}
+    const initialState = { count: 0 };
+    const [state, dispatch] = useReducer(reducer, initialState);
 
-            if (!state.values.nombre.trim()) {
-                errors.nombre = 'El nombre es obligatorio';
-            }
-            if (state.values.mensaje.trim().length < 10) {
-                errors.mensaje = 'El mensaje debe tener al menos 10 caratcteres';
-            }
-            if (!regex.text(state.values.email)) {
-                errors.email = 'El Correo es Invalido ';
-            }
 
-            return {
-                ...state,
-                errors: errors,
-                enviado: Object.keys(errors).length === 0
-            };
-        default:
-            return state;
-    }
-}
+    return (
+        <div>
+            FormReducer
+            <h2>contador:{state.count}</h2>
+
+            <button
+                className="bg-gray-800 text-white px-4 px-2 rounded hover:bg-gray-500 mr-2"
+                onClick={() => dispatch({ type: 'decrementar' })}
+            >
+                decrementar
+            </button>
+
+            <button className="bg-gray-800 text-white px-4 px-2 rounded hover:bg-gray-500 mr-2"
+                onClick={() => dispatch({ type: 'resetear' })}
+            >
+                resetear
+            </button>
+            <button className="bg-gray-800 text-white px-4 px-2 rounded hover:bg-gray-500 mr-2"
+                onClick={() => dispatch({ type: 'incrementar' })}
+            >
+                incrementar
+            </button>
+
+        </div>
+    );
+};
 
 
 

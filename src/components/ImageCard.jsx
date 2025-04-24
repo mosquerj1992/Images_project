@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 export const ImageCard = ({ src, author, description }) => {
 
     return (
@@ -13,9 +13,9 @@ export const ImageCard = ({ src, author, description }) => {
                     Read More
                 </button>
             </div>
-
         </div>
     );
 };
 
 
+ 

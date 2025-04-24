@@ -22,7 +22,7 @@ export const ImageGrid = () => {
 
     const onHandleKeyDow = (event) => {
         if (event.key === 'Enter') {
-            getRequest(query);
+           onHandleClick() ;
         }
     }
 

@@ -1,5 +1,5 @@
-export const getImages = async (query = 'nature',perPage = 5, orientation='landscape')=>{
-    const url = `https://api.pexels.com/v1/search?query=${query}&per_page=${perPage}&orientation=${orientation}`;    
+export const getImages = async (query = 'nature',orientation='landscape')=>{
+    const url = `https://api.pexels.com/v1/search?query=${query}&orientation=${orientation}`;    
     console.log(url);
     const request = await fetch(url, {
         method: "GEt",
