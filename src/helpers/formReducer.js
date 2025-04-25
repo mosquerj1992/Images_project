@@ -1,9 +1,10 @@
-import { startTransition } from "react";
-
-export const formReduccer = (state, action) => {
+export const formReducer = (state, action) => {
 
 
     const regex = /^\s+@\s+\.\s$/;
+
+    const errors = {}
+    
     switch (action.type) {
         case 'update_field':
 
@@ -15,9 +16,8 @@ export const formReduccer = (state, action) => {
                 },
                 enviado: false,
             };
-            case'validate':
-            const errors = {}
-
+            case'validate':{
+                
             if(!state.values.nomber.trim()){
                 errors.nomber='El nomber es obligado';
             }
@@ -35,6 +35,9 @@ export const formReduccer = (state, action) => {
                 errors: errors,
                 enviado: Object.keys (errors).length ===0
             };
+
+        }
+            
             default:
                 return state;
             

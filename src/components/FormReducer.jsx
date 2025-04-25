@@ -1,6 +1,5 @@
 import React, { useReducer } from "react";
-import { FormReducer } from "../helpers/CounterReduccer";
-import { formReduccer } from "../helpers/FromReduccer";
+import { formReducer } from "../helpers/formReducer";
 
 export const FormReducer = () => {
     const initialState = {
@@ -13,7 +12,7 @@ export const FormReducer = () => {
         enviado: false,
     };
 
-    const [state, dispatch] = useReducer(formReduccer, intitalState);
+    const [state, dispatch] = useReducer(formReducer, initialState);
 
     const handleChange = (e) => {
         dispatch({

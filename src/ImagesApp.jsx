@@ -1,6 +1,9 @@
 import React from "react";
 import { ImageGrid } from "./components/ImageGrid";
+import {FormReducer} from "./components/FormReducer";
 import { CounterReducer } from "./components/CounterReduccer";
+import { MyForm } from "./components/MyForm";
+import { ComplexForm } from "./components/ComplexForm";
 
 
 export const ImagesApp = () => {
@@ -13,10 +16,11 @@ export const ImagesApp = () => {
     
     
       {/* < ImageGrid/> */}
-      <FormReducer/>
       {/* <CounterReducer/> */}
-      
-        
+      {/* <FormReducer/> */}
+      {/* <MyForm/>   */}
+      <ComplexForm/>
+              
    </div>
   );
 };
