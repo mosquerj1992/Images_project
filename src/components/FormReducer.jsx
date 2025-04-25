@@ -3,7 +3,7 @@ import { FormReducer } from "../helpers/CounterReduccer";
 import { formReduccer } from "../helpers/FromReduccer";
 
 export const FormReducer = () => {
-    const intitalState = {
+    const initialState = {
         values: {
             nombre: "",
             email: "",
