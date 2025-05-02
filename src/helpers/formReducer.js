@@ -33,11 +33,10 @@ export const formReducer = (state, action) => {
             return{
                 ...state,
                 errors: errors,
-                enviado: Object.keys (errors).length ===0
+                enviado: Object.keys (errors).length === 0
             };
 
-        }
-            
+        }           
             default:
                 return state;
             
